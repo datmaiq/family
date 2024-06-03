@@ -13,7 +13,6 @@ import { Address } from './address'
 export const metadata: Metadata = {
   title: 'Settings',
 }
-
 export default function Settings() {
   return (
     <form method="post" className="mx-auto max-w-4xl">

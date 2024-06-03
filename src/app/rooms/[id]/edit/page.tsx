@@ -8,7 +8,6 @@ import { getEvent, getEventOrders } from '@/data'
 import { ChevronLeftIcon } from '@heroicons/react/16/solid'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   let event = await getEvent(params.id)
 
@@ -30,7 +29,7 @@ export default async function Event({ params }: { params: { id: string } }) {
       <div className="max-lg:hidden">
         <Link href="/rooms" className="inline-flex items-center gap-2 text-sm/6 text-zinc-500 dark:text-zinc-400">
           <ChevronLeftIcon className="size-4 fill-zinc-400 dark:fill-zinc-500" />
-          Phòng
+          Phòng 123
         </Link>
       </div>
       <div className="mt-4 flex flex-wrap items-end justify-between gap-4">
@@ -49,12 +48,7 @@ export default async function Event({ params }: { params: { id: string } }) {
           </div>
         </div>
         <div className="flex gap-4">
-          <Button outline>
-            <Link href={`/rooms/${params.id}/edit`} aria-hidden="true">
-              {' '}
-              Sửa
-            </Link>
-          </Button>
+          <Button outline>Sửa</Button>
           <Button>Xem chi tiết</Button>
         </div>
       </div>

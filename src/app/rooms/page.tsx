@@ -1,18 +1,18 @@
-import {Badge} from '@/components/badge'
-import {Button} from '@/components/button'
-import {Divider} from '@/components/divider'
-import {Dropdown, DropdownButton, DropdownItem, DropdownMenu} from '@/components/dropdown'
-import {Heading} from '@/components/heading'
-import {Input, InputGroup} from '@/components/input'
-import {Link} from '@/components/link'
-import {Select} from '@/components/select'
-import {getRooms} from '@/data'
-import {EllipsisVerticalIcon, MagnifyingGlassIcon} from '@heroicons/react/16/solid'
-import type {Metadata} from 'next'
-
-export const metadata: Metadata = {
-  title: 'Phòng',
-}
+'use client'
+import { Badge } from '@/components/badge'
+import { Button } from '@/components/button'
+import { Divider } from '@/components/divider'
+import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '@/components/dropdown'
+import { Heading } from '@/components/heading'
+import { Input, InputGroup } from '@/components/input'
+import { Link } from '@/components/link'
+import { Select } from '@/components/select'
+import { getRooms } from '@/data'
+import { EllipsisVerticalIcon, MagnifyingGlassIcon } from '@heroicons/react/16/solid'
+// import type { Metadata } from 'next'
+// export const metadata: Metadata = {
+//   title: 'Phòng',
+// }
 
 export default async function Rooms() {
   let rooms = await getRooms()
@@ -25,8 +25,8 @@ export default async function Rooms() {
           <div className="mt-4 flex max-w-xl gap-4">
             <div className="flex-1">
               <InputGroup>
-                <MagnifyingGlassIcon/>
-                <Input name="search" placeholder="Tìm phòng&hellip;"/>
+                <MagnifyingGlassIcon />
+                <Input name="search" placeholder="Tìm phòng&hellip;" />
               </InputGroup>
             </div>
             <div>
@@ -38,17 +38,18 @@ export default async function Rooms() {
           </div>
         </div>
         <Button>Tạo phòng</Button>
+        {/* <EditRoomModal show={true} onClose={() => {}} onEditRoom={(room) => {}} /> */}
       </div>
       <ul className="mt-10">
         {rooms.map((room, index) => (
           <>
             <li key={room.id}>
-              <Divider soft={index > 0}/>
+              <Divider soft={index > 0} />
               <div className="flex items-center justify-between">
                 <div key={room.id} className="flex gap-6 py-6">
                   <div className="w-32 shrink-0">
                     <Link href={room.url} aria-hidden="true">
-                      <img className="aspect-[3/2] rounded-lg shadow" src={room.imgUrl} alt=""/>
+                      <img className="aspect-[3/2] rounded-lg shadow" src={room.imgUrl} alt="" />
                     </Link>
                   </div>
                   <div className="space-y-1.5">
@@ -69,7 +70,7 @@ export default async function Rooms() {
                   </Badge>
                   <Dropdown>
                     <DropdownButton plain aria-label="More options">
-                      <EllipsisVerticalIcon/>
+                      <EllipsisVerticalIcon />
                     </DropdownButton>
                     <DropdownMenu anchor="bottom end">
                       <DropdownItem href={room.url}>View</DropdownItem>
