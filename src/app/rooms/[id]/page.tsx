@@ -57,7 +57,7 @@ export default async function Event({params}: { params: { id: string } }) {
         <Stat title="Tổng tiền cần thanh toán" value={event.totalRevenue} change={event.totalRevenueChange}/>
         <Stat
           title="Tiền điện"
-          value={`${event.ticketsSold}/${event.ticketsAvailable}`}
+          value={event.electricBill}
           change={event.ticketsSoldChange}
         />
         <Stat title="Tiền nước" value={event.pageViews} change={event.pageViewsChange}/>

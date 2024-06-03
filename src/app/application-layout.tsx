@@ -132,7 +132,7 @@ export function ApplicationLayout({
               </SidebarItem>
               <SidebarItem href="/rooms" current={pathname.startsWith('/events')}>
                 <Square2StackIcon />
-                <SidebarLabel>Events</SidebarLabel>
+                <SidebarLabel>Phòng</SidebarLabel>
               </SidebarItem>
               <SidebarItem href="/orders" current={pathname.startsWith('/orders')}>
                 <TicketIcon />

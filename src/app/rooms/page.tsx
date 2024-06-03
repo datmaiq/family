@@ -11,7 +11,7 @@ import {EllipsisVerticalIcon, MagnifyingGlassIcon} from '@heroicons/react/16/sol
 import type {Metadata} from 'next'
 
 export const metadata: Metadata = {
-  title: 'Rooms',
+  title: 'Phòng',
 }
 
 export default async function Rooms() {
@@ -21,24 +21,23 @@ export default async function Rooms() {
     <>
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div className="max-sm:w-full sm:flex-1">
-          <Heading>Rooms</Heading>
+          <Heading>Phòng</Heading>
           <div className="mt-4 flex max-w-xl gap-4">
             <div className="flex-1">
               <InputGroup>
                 <MagnifyingGlassIcon/>
-                <Input name="search" placeholder="Search events&hellip;"/>
+                <Input name="search" placeholder="Tìm phòng&hellip;"/>
               </InputGroup>
             </div>
             <div>
               <Select name="sort_by">
-                <option value="name">Sort by name</option>
-                <option value="date">Sort by date</option>
-                <option value="status">Sort by status</option>
+                <option value="name">Sắp xếp theo tên</option>
+                <option value="status">Sắp xếp theo trạng thái</option>
               </Select>
             </div>
           </div>
         </div>
-        <Button>Create rooms</Button>
+        <Button>Tạo phòng</Button>
       </div>
       <ul className="mt-10">
         {rooms.map((room, index) => (
@@ -60,7 +59,7 @@ export default async function Rooms() {
                       <span aria-hidden="true">·</span> {room.location}
                     </div>
                     <div className="text-xs/6 text-zinc-600">
-                      {room.ticketsSold}/{room.ticketsAvailable} tickets sold
+                      Thời gian thuê: {room.totalDaysLeft} ngày còn lại / {room.totalDaysInContract} ngày tổng cộng
                     </div>
                   </div>
                 </div>
